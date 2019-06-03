@@ -8,7 +8,12 @@ pipeline {
     }
     stage('statuscheck') {
           steps {
-              echo "stage 2"
+              BufferedReader br = new BufferedReader(new FileReader(/Users/ashok/.jenkins/jobs/GVpipeline1/workspace/abc.csv));
+while ((line = br.readLine()) != null) {
+    // use comma as separator
+    String[] cols = line.split(",");
+    println(cols[4]);
+}
           }
       }
       
