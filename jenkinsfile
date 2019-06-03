@@ -1,5 +1,6 @@
 pipeline {
-  agent any 
+  agent any
+  def csvfile = abc.csv
   stages {
     stage('checkout') { 
       steps {
@@ -10,7 +11,7 @@ pipeline {
           steps {
               //BufferedReader br = new BufferedReader(new FileReader(abc.csv))
               //def csvfile = abc.csv
-while ((line = "abc.csv".readLine()) != null) {
+while ((line = csvfile.readLine()) != null) {
     // use comma as separator
     String[] cols = line.split(",")
     println(cols[4]);
