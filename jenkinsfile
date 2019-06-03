@@ -1,0 +1,16 @@
+pipeline {
+  agent any 
+  stages {
+    stage('checkout') { 
+      steps {
+        git checkout 'https://github.com/ashokmahato/ML.git'
+      }
+    }
+    stage('statuscheck') {
+          steps {
+              echo "stage 2"
+          }
+      }
+      
+    }
+  }
