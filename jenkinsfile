@@ -8,8 +8,9 @@ pipeline {
     }
     stage('statuscheck') {
           steps {
-              BufferedReader br = new BufferedReader(new FileReader(abc.csv))
-while ((line = br.readLine()) != null) {
+              //BufferedReader br = new BufferedReader(new FileReader(abc.csv))
+              def csvfile = abc.csv
+while ((line = csvfile.readLine()) != null) {
     // use comma as separator
     String[] cols = line.split(",")
     println(cols[4]);
