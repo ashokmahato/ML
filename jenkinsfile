@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('checkout') { 
       steps {
-        git checkout 'https://github.com/ashokmahato/ML.git'
+        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/ashokmahato/ML.git']]])
       }
     }
     stage('statuscheck') {
